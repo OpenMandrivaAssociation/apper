@@ -17,6 +17,9 @@ BuildRequires:	polkit-devel
 Obsoletes:	kpackagekit < 0.7.0
 Provides:	kpackagekit = %{version}-%{release}
 Requires:	packagekit >= 0.6.17
+Provides:	packagekit-gui
+Obsoletes:	kpackagekit
+Obsoletes:	kpackagekit-common
 
 %description
 KDE interface for PackageKit.
@@ -51,6 +54,6 @@ mv %{buildroot}%{_datadir}/dbus-1/services/org.freedesktop.PackageKit.service \
 %{buildroot}%{_datadir}/dbus-1/services/kde-org.freedesktop.PackageKit.service 
 
 %check
-desktop-file-validate %{buildroot}%{_kde_datadir}/applications/kde4/apper.desktop
+desktop-file-validate %{buildroot}%{_kde_datadir}/applications/kde4/apper*.desktop
 
 
