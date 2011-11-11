@@ -1,5 +1,6 @@
 %define git 1
-%define gitdate %(date +%Y%m%d)
+# use a fix date
+%define gitdate 20111111
 
 Name:		apper
 Summary:	KDE interface for PackageKit
