@@ -55,6 +55,9 @@ mv %{buildroot}%{_datadir}/dbus-1/services/org.freedesktop.PackageKit.service \
 %{buildroot}%{_datadir}/dbus-1/services/kde-org.freedesktop.PackageKit.service 
 
 %check
-desktop-file-validate %{buildroot}%{_kde_datadir}/applications/kde4/apper*.desktop
-
+pushd %{buildroot}%{_kde_datadir}/applications/kde4/
+for file in apper apper_installer; do
+desktop-file-validate $file.desktop
+done
+popd
 
