@@ -6,7 +6,7 @@ Name:		apper
 Summary:	KDE interface for PackageKit
 Group:		System/Configuration/Packaging
 Version:	0.7.1
-Release:	%mkrel -c git%{gitdate} 1
+Release:	0.git%{gitdate}.2
 License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0: 	http://dl.dropbox.com/u/37314029/%{name}%{!?git:-%{version}}.tar.%{?git:xz}%{!?git:bz2}
