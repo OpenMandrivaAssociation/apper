@@ -14,7 +14,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	kdelibs4-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	packagekit-devel >= 0.6.17
-BuildRequires:	polkit-devel
+BuildRequires:	libpolkit-devel
 Obsoletes:	kpackagekit < 0.7.0
 Provides:	kpackagekit = %{version}-%{release}
 Requires:	packagekit >= 0.6.17
