@@ -25,7 +25,7 @@ Obsoletes:	kpackagekit-common
 %description
 KDE interface for PackageKit.
 
-%files -f %name.lang
+%files 
 %{_datadir}/dbus-1/services/*.service
 %{_kde_bindir}/apper
 %{_kde_libdir}/kde4/*apper*.so
@@ -48,7 +48,6 @@ KDE interface for PackageKit.
 %install
 rm -rf %{buildroot}
 %makeinstall_std -C build
-%find_lang %{name}
 
 # hack around gnome-packagekit conflict
 mv %{buildroot}%{_datadir}/dbus-1/services/org.freedesktop.PackageKit.service \
