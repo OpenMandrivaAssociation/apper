@@ -1,26 +1,25 @@
 %define git 1
 # use a fix date
-%define gitdate 20111111
+%define gitdate 20111129
 
 Name:		apper
-Summary:	KDE interface for PackageKit
+Summary:	KDE PackageKit Interface
 Group:		System/Configuration/Packaging
 Version:	0.7.1
-Release:	0.git%{gitdate}.3
+Release:	0.git%{gitdate}.1
 License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
-Source0: 	http://dl.dropbox.com/u/37314029/%{name}%{!?git:-%{version}}.tar.%{?git:xz}%{!?git:bz2}
+Source0:	http://dl.dropbox.com/u/37314029/%{name}%{!?git:-%{version}}.tar.%{?git:xz}%{!?git:bz2}
+BuildRequires:	chrpath
 BuildRequires:	desktop-file-utils
 BuildRequires:	kdelibs4-devel
 BuildRequires:	qt4-qtdbus
-BuildRequires:	packagekit-devel >= 0.6.17
-BuildRequires:	libpolkit-devel
-Obsoletes:	kpackagekit < 0.7.0
-Provides:	kpackagekit = %{version}-%{release}
+BuildRequires:	pkgconfig(packagekit-glib2) >= 0.6.17
+BuildRequires:	pkgconfig(polkit)
 Requires:	packagekit >= 0.6.17
-Provides:	packagekit-gui
-Obsoletes:	kpackagekit
-%rename kpackagekit-common
+Provides:	packagekit-gui = %{version}-%{release}
+%rename		kpackagekit
+%rename		kpackagekit-common
 
 %description
 KDE interface for PackageKit.
@@ -32,7 +31,7 @@ KDE interface for PackageKit.
 %{_kde_libdir}/apper/libapper.so
 %{_kde_appsdir}/?pper*/
 %{_kde_libdir}/kde4/libexec/apper-sentinel
-%{_kde_datadir}/applications/kde4/apper*.desktop
+%{_kde_applicationsdir}/apper*.desktop
 %{_kde_services}/kcm_apper.desktop
 %{_kde_services}/kded/apperd.desktop
 %{_kde_mandir}/man1/apper.1.*
@@ -42,7 +41,7 @@ KDE interface for PackageKit.
 %setup -q%{?git:n %{name}}
 
 %build
-%cmake_kde4
+%cmake_kde4 -DAUTOREMOVE:BOOL=OFF -DCMAKE_SKIP_RPATH:BOOL=OFF
 %make
 
 %install
@@ -53,10 +52,10 @@ rm -rf %{buildroot}
 mv %{buildroot}%{_datadir}/dbus-1/services/org.freedesktop.PackageKit.service \
 %{buildroot}%{_datadir}/dbus-1/services/kde-org.freedesktop.PackageKit.service 
 
-%check
-pushd %{buildroot}%{_kde_datadir}/applications/kde4/
-for file in apper apper_installer; do
-desktop-file-validate $file.desktop
-done
-popd
+chrpath --list %{buildroot}%{_kde_bindir}/apper
+chrpath --replace %{_kde_libdir}/apper %{buildroot}%{_kde_bindir}/apper
 
+%check
+for file in apper apper_installer; do
+  desktop-file-validate %{buildroot}%{_kde_datadir}/applications/kde4/$file.desktop
+done
