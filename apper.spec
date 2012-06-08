@@ -17,6 +17,7 @@ Source0:	http://download.kde.org/stable/apper/%version/src/%name-%version.tar.bz
 BuildRequires:	chrpath
 BuildRequires:	desktop-file-utils
 BuildRequires:	kdelibs4-devel
+BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	pkgconfig(packagekit-glib2) >= 0.6.17
 BuildRequires:	pkgconfig(polkit)
