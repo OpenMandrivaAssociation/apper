@@ -66,3 +66,32 @@ chrpath --replace %{_kde_libdir}/apper %{buildroot}%{_kde_bindir}/apper
 for file in apper apper_installer; do
   desktop-file-validate %{buildroot}%{_kde_datadir}/applications/kde4/$file.desktop
 done
+
+
+%changelog
+* Sat Jun 09 2012 Bernhard Rosenkraenzer <bero@bero.eu> 0.7.2-1
++ Revision: 803684
+- Update to 0.7.2
+- Build in current environment
+
+* Sat Dec 31 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.7.1-0.git20111129.1
++ Revision: 748340
+- Fix apper to be able to run (thanks to zemo)
+- Add rename for a smooth upgrade
+
+  + Nicolas Lécureuil <nlecureuil@mandriva.com>
+    - Remove use of  find_lang
+    - Fix BuildRequires
+    - Rebuild against new kde
+
+* Fri Nov 11 2011 Zé <ze@mandriva.org> 0.7.1-0.git20111111.1
++ Revision: 729947
+- fix checks
+- use a fix date
+- the new KPackageKit generation
+- check all .desktop files
+- imported package apper
+
+
+* Thu Nov 10 2011 Zé <ze@mandriva.org> 0.7.1-0.git20111110.1
+- first package (from git source SHA a7c4c7e7154da16719a3a41fa34fa374d2336367)
