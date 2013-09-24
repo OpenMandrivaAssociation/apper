@@ -23,15 +23,15 @@ KDE interface for PackageKit.
 %{_datadir}/dbus-1/services/*.service
 %{_kde_bindir}/apper
 %{_kde_libdir}/kde4/*apper*.so
-%{_kde_libdir}/kde4/plasma_applet_updater.so
+%{_kde_libdir}/kde4/imports/org/kde/apper
 %{_kde_libdir}/apper/libapper.so
 %{_kde_appsdir}/?pper*/
-%{_kde_datadir}/apps/plasma/packages
+%{_kde_appsdir}/plasma/plasmoids/org.packagekit.updater
 %{_kde_libdir}/kde4/libexec/apper-pk-session
 %{_kde_applicationsdir}/apper*.desktop
 %{_kde_services}/kcm_apper.desktop
 %{_kde_services}/kded/apperd.desktop
-%{_kde_services}/plasma-applet-updater.desktop
+%{_kde_services}/plasma-applet-org.packagekit.updater.desktop
 %{_kde_mandir}/man1/apper.1.*
 
 #--------------------------------------------------------------------
