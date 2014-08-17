@@ -10,7 +10,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	qt4-qtdbus
-BuildRequires:	packagekit-qt-devel >= 0.8.5
+BuildRequires:	packagekit-qt-devel >= 0.9.0
 Requires:	packagekit >= 0.6.17
 Provides:	packagekit-gui = %{version}-%{release}
 %rename		kpackagekit
