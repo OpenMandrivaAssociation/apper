@@ -1,0 +1,12 @@
+diff -Naur apper-0.8.1/apperd/apperd.desktop apper-0.8.1.tpg/apperd/apperd.desktop
+--- apper-0.8.1/apperd/apperd.desktop	2013-07-29 15:36:55.000000000 +0000
++++ apper-0.8.1.tpg/apperd/apperd.desktop	2014-09-21 20:59:17.130353096 +0000
+@@ -3,7 +3,7 @@
+ 
+ X-KDE-ServiceTypes=KDEDModule
+ X-KDE-Library=apperd
+-X-KDE-Kded-autoload=true
++X-KDE-Kded-autoload=false
+ X-KDE-Kded-phase=2
+ 
+ Name=Apper Monitor
