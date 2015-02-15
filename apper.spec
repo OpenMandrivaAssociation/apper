@@ -1,17 +1,17 @@
 Name:		apper
 Summary:	KDE PackageKit Interface
 Group:		System/Configuration/Packaging
-Version:	0.8.1
-Release:	2.1
+Version:	0.9.1
+Release:	2
 License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0:	http://download.kde.org/stable/apper/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		apper-0.8.1-disable-autoload.patch
+Patch0:		apper-0.9.0-disable-autoload.patch
 BuildRequires:	desktop-file-utils
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	qt4-qtdbus
-BuildRequires:	packagekit-qt-devel >= 0.8.5
+BuildRequires:	packagekit-qt-devel >= 0.9.0
 Requires:	packagekit >= 0.6.17
 Provides:	packagekit-gui = %{version}-%{release}
 %rename		kpackagekit
@@ -34,7 +34,7 @@ KDE interface for PackageKit.
 %{_kde_services}/kded/apperd.desktop
 %{_kde_services}/plasma-applet-org.packagekit.updater.desktop
 %{_kde_mandir}/man1/apper.1.*
-
+%{_datadir}/appdata/%{name}.appdata.xml
 #--------------------------------------------------------------------
 %prep
 %setup -q
