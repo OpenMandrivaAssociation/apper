@@ -2,11 +2,10 @@ Name:		apper
 Summary:	KDE PackageKit Interface
 Group:		System/Configuration/Packaging
 Version:	0.9.1
-Release:	2
+Release:	3
 License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0:	http://download.kde.org/stable/apper/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		apper-0.9.0-disable-autoload.patch
 BuildRequires:	desktop-file-utils
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdebase4-workspace-devel
