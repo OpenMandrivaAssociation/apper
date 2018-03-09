@@ -24,6 +24,7 @@ BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5XmlPatterns)
 BuildRequires:	cmake(packagekitqt5)
+BuildRequires:	cmake(AppStreamQt)
 
 Requires:	packagekit >= 0.6.17
 Provides:	packagekit-gui = %{version}-%{release}
