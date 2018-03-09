@@ -23,6 +23,7 @@ BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5XmlPatterns)
+BuildRequires:	cmake(packagekitqt5)
 
 Requires:	packagekit >= 0.6.17
 Provides:	packagekit-gui = %{version}-%{release}
@@ -45,6 +46,7 @@ KDE interface for PackageKit.
 %{_kde5_services}/kded/apperd.desktop
 %{_mandir}/man1/apper.1.*
 #--------------------------------------------------------------------
+
 %prep
 %setup -q
 %apply_patches
