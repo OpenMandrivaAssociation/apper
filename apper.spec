@@ -6,6 +6,7 @@ Release:	2
 License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0:	http://download.kde.org/stable/apper/%{version}/%{name}-%{version}.tar.xz
+Patch0:		apper-qt5.11-fix.patch
 BuildRequires:	desktop-file-utils
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KDED)
@@ -50,7 +51,7 @@ KDE interface for PackageKit.
 
 %prep
 %setup -q
-%apply_patches
+%patch0 -p0
 
 %build
 %cmake_kde5 -DAUTOREMOVE:BOOL=OFF -DCMAKE_SKIP_RPATH:BOOL=OFF
