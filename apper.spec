@@ -2,7 +2,7 @@ Name:		apper
 Summary:	KDE PackageKit Interface
 Group:		System/Configuration/Packaging
 Version:	1.0.0
-Release:	2
+Release:	1
 License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0:	http://download.kde.org/stable/apper/%{version}/%{name}-%{version}.tar.xz
