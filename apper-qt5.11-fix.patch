@@ -1,0 +1,24 @@
+Index: libapper/Requirements.h
+===================================================================
+--- libapper/Requirements.h
++++ libapper/Requirements.h	2018-11-28 21:31:17.623408601 +0100
+@@ -23,6 +23,7 @@
+ 
+ #include <QDialog>
+ 
++#include <QButtonGroup>
+ #include <QToolButton>
+ 
+ namespace Ui {
+Index: Apper/Settings/Settings.cpp
+===================================================================
+--- Apper/Settings/Settings.cpp
++++ Apper/Settings/Settings.cpp	2018-11-28 21:30:27.086881278 +0100
+@@ -27,6 +27,7 @@
+ #include <Enum.h>
+ #include <PkStrings.h>
+ 
++#include <QAction>
+ #include <QTimer>
+ #include <QSortFilterProxyModel>
+ 
