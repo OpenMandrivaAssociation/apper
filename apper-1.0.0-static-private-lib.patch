@@ -1,0 +1,18 @@
+diff -up apper-1.0.0/libapper/CMakeLists.txt.omv~ apper-1.0.0/libapper/CMakeLists.txt
+--- apper-1.0.0/libapper/CMakeLists.txt.omv~	2018-11-28 22:07:22.190696964 +0100
++++ apper-1.0.0/libapper/CMakeLists.txt	2018-11-28 22:08:35.472365546 +0100
+@@ -50,7 +50,7 @@ ki18n_wrap_ui(libapper_SRCS
+     InfoWidget.ui
+ )
+ 
+-add_library(apper_private SHARED ${libapper_SRCS})
++add_library(apper_private STATIC ${libapper_SRCS})
+ 
+ target_link_libraries(apper_private
+     KF5::WidgetsAddons
+@@ -61,5 +61,3 @@ target_link_libraries(apper_private
+     PK::packagekitqt5
+     AppStreamQt
+ )
+-
+-install(TARGETS apper_private DESTINATION ${CMAKE_INSTALL_LIBDIR}/apper)

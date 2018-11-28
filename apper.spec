@@ -7,6 +7,7 @@ License:	GPLv2+
 URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0:	http://download.kde.org/stable/apper/%{version}/%{name}-%{version}.tar.xz
 Patch0:		apper-qt5.11-fix.patch
+Patch1:		apper-1.0.0-static-private-lib.patch
 BuildRequires:	desktop-file-utils
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KDED)
@@ -39,7 +40,6 @@ KDE interface for PackageKit.
 %{_datadir}/dbus-1/services/*.service
 %{_kde5_bindir}/apper
 %{_qt5_plugindir}/kded_apperd.so
-%{_kde5_libdir}/apper/libapper_private.so
 %{_kde5_datadir}/apperd/
 %{_kde5_datadir}/apper
 %{_kde5_libdir}/libexec/apper-pk-session
@@ -50,8 +50,7 @@ KDE interface for PackageKit.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-%patch0 -p0
+%autosetup -p1
 
 %build
 %cmake_kde5 -DAUTOREMOVE:BOOL=OFF -DCMAKE_SKIP_RPATH:BOOL=OFF
