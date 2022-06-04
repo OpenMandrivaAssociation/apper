@@ -8,6 +8,7 @@ URL:		http://www.opendesktop.org/content/show.php/Apper?content=84745
 Source0:	http://download.kde.org/stable/apper/%{version}/%{name}-%{version}.tar.xz
 Patch0:		apper-qt5.11-fix.patch
 Patch1:		apper-1.0.0-static-private-lib.patch
+Patch2:		apper-1.0.0-qt-5.15.4.patch
 BuildRequires:	desktop-file-utils
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KDED)
